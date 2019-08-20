@@ -130,8 +130,7 @@ fabric.properties
 .idea
 *.iml
 **/src/main/resources/
-!rivan-web/src/main/resources/
-!rivan/src/main/resources/
+!vayne-generator/src/main/resources/
 .factorypath
 .project
 .settings
