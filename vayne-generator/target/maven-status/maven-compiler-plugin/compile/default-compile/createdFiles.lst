@@ -1,0 +1,10 @@
+com\dabanjia\vayne\util\DataBaseUtil.class
+com\dabanjia\vayne\connect\JavaModel.class
+com\dabanjia\vayne\connect\GeneratorConfig.class
+com\dabanjia\vayne\util\StringTranslateUtil.class
+com\dabanjia\vayne\connect\ColumnModel.class
+com\dabanjia\vayne\util\FreeMarkerUtil.class
+com\dabanjia\vayne\connect\Parser.class
+com\dabanjia\vayne\connect\GeneratorExecutor.class
+com\dabanjia\vayne\exception\DataBaseQueryException.class
+com\dabanjia\vayne\util\PropertyTypeUtil.class
