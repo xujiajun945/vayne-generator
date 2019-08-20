@@ -129,8 +129,6 @@ fabric.properties
 .vscode
 .idea
 *.iml
-**/src/main/resources/
-!vayne-generator/src/main/resources/
 .factorypath
 .project
 .settings
