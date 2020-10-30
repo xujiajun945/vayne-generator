@@ -15,11 +15,17 @@ public class PropertyTypeUtil {
 	 */
 	public static String columnTypeToJavaType(String columnType) {
 		String javaType = null;
-		switch (columnType) {
+		switch (columnType.toUpperCase()) {
 			case "BIGINT":
 				javaType = "Long";
 				break;
+			case "BIGINT UNSIGNED":
+				javaType = "Long";
+				break;
 			case "VARCHAR":
+				javaType = "String";
+				break;
+			case "TEXT":
 				javaType = "String";
 				break;
 			case "DATETIME":
@@ -34,6 +40,9 @@ public class PropertyTypeUtil {
 			case "INT":
 				javaType = "Integer";
 				break;
+			case "INT UNSIGNED":
+				javaType = "Integer";
+				break;
 			case "CHAR":
 				javaType = "String";
 				break;
@@ -41,6 +50,9 @@ public class PropertyTypeUtil {
 				javaType = "Integer";
 				break;
 			case "FLOAT":
+				javaType = "float";
+				break;
+			case "FLOAT UNSIGNED":
 				javaType = "float";
 				break;
 			case "TINYINT UNSIGNED":
@@ -61,7 +73,7 @@ public class PropertyTypeUtil {
 	 */
 	public static String buildImportPackage(String columnType) {
 		String packageName = null;
-		switch (columnType) {
+		switch (columnType.toUpperCase()) {
 			case "DATETIME":
 				packageName = "java.util.Date";
 				break;

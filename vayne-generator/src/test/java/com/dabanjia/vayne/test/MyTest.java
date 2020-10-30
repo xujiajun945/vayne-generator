@@ -13,6 +13,7 @@ import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -85,12 +86,16 @@ public class MyTest {
 //		System.out.println(javaModelList);
 //	}
 //
-//	@Test
-//	public void test07() throws Exception {
-//		GeneratorConfig config = new GeneratorConfig();
-//		GeneratorExecutor executor = new GeneratorExecutor();
-//		executor.execute(config);
-//	}
+	@Test
+	public void test07() throws Exception {
+		List<String> tableNames = new ArrayList<>();
+		tableNames.add("offline_kefu");
+
+		GeneratorConfig config = new GeneratorConfig();
+		config.setTableNames(tableNames);
+		GeneratorExecutor executor = new GeneratorExecutor();
+		executor.execute(config);
+	}
 //
 //	@Test
 //	public void test08() throws SQLException {

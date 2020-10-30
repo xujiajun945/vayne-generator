@@ -1,10 +1,15 @@
 package com.dabanjia.vayne.util;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  * @author xujiajun
  * @date 2019/1/16
  */
 public class StringTranslateUtil {
+
+	private static Pattern linePattern = Pattern.compile("_(\\w)");
 
 	private StringTranslateUtil() {}
 
@@ -13,15 +18,26 @@ public class StringTranslateUtil {
 	 * @param tableName
 	 * @return
 	 */
+//	public static String createModelName(String tableName) {
+//		String[] tableNameArr = tableName.split("_");
+//		if (tableNameArr.length <= 1) {
+//			return tableNameArr[0];
+//		}
+//		StringBuilder sb = new StringBuilder();
+//		for (int i = 1; i < tableNameArr.length; i++) {
+//			sb.append(tableNameArr[i].substring(0, 1).toUpperCase() + tableNameArr[i].substring(1));
+//		}
+//		return sb.toString();
+//	}
+
 	public static String createModelName(String tableName) {
-		String[] tableNameArr = tableName.split("_");
-		if (tableNameArr.length <= 1) {
-			return tableNameArr[0];
+		tableName = tableName.toLowerCase();
+		Matcher matcher = linePattern.matcher(tableName);
+		StringBuffer sb = new StringBuffer();
+		while (matcher.find()) {
+			matcher.appendReplacement(sb, matcher.group(1).toUpperCase());
 		}
-		StringBuilder sb = new StringBuilder();
-		for (int i = 1; i < tableNameArr.length; i++) {
-			sb.append(tableNameArr[i].substring(0, 1).toUpperCase() + tableNameArr[i].substring(1));
-		}
+		matcher.appendTail(sb);
 		return sb.toString();
 	}
 
