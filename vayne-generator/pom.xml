@@ -16,7 +16,7 @@
 
 		<freemarker.version>2.3.28</freemarker.version>
 		<junit.version>4.12</junit.version>
-		<mysql-connector>5.1.38</mysql-connector>
+		<mysql-connector>8.0.28</mysql-connector>
 		<lombok.version>1.18.4</lombok.version>
 	</properties>
 
